@@ -1,4 +1,4 @@
-@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('Material Dashboard')])
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('KG Directory')])
 
 @section('content')
 <div class="container" style="height: auto;">
@@ -8,7 +8,7 @@
         @csrf
 
         <div class="card card-login card-hidden mb-3">
-          <div class="card-header card-header-primary text-center">
+          <div class="card-header card-header-info text-center">
             <h4 class="card-title"><strong>{{ __('Register') }}</strong></h4>
             <div class="social-line">
               <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
@@ -52,6 +52,32 @@
                 </div>
               @endif
             </div>
+            <div class="bmd-form-group{{ $errors->has('city') ? ' has-danger' : '' }}">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">map</i>
+                    </span>
+                  </div>
+                  <input type="text" name="city" class="form-control" placeholder="{{ __('City...') }}" required>
+                </div>
+
+              </div>
+
+              <div class="bmd-form-group{{ $errors->has('district') ? ' has-danger' : '' }}">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">map</i>
+                    </span>
+                  </div>
+                  <input type="text" name="district" class="form-control" placeholder="{{ __('District...') }}" required>
+                </div>
+
+              </div>
+
+
+
             <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -84,26 +110,26 @@
             </div>
 
             <div class="bmd-form-group{{ $errors->has('type') ? ' has-danger' : '' }} mt-3 mr-auto ml-3 row ">
-            <div class="form-check form-check-radio form-check-inline col">
+            <div class="form-check form-check-radio form-check-inline col imageRadio">
 
-                <label class="form-check-label " style="padding: 5px;">
-                    <span >KG Owner </span>
-                  <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="option1" checked>
+                <label  style="padding: 5px;">
 
-                  <span class="circle">
-                      <span class="check"> <img src="images/flaticon/png/006-teacher.png" alt="Image" class="img-fluid"></span>
-                  </span>
+
+
+
+                  <input  type="radio" name="type" id="kgowner" value="kgowner" checked>
+                  <label class="imageclick" for="kgowner" rel="tooltip" title="KG Owner"><img src="images/flaticon/png/006-teacher.png" alt="Image" class="img-fluid"></label>
+
+
                 </label>
               </div>
               <div class="form-check form-check-radio form-check-inline col">
 
-                <label class="form-check-label">
-                    <span >Parent</span>
-                  <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="option2">
-                  <span class="circle">
+                <label c>
 
-                      <span class="check"><img src="images/flaticon/png/005-family.png" alt="Image" class="img-fluid"></span>
-                  </span>
+                  <input type="radio" name="type" id="parent" value="parent">
+                  <label class="radioClick" for="parent" rel="tooltip" title="Parent"><img src="images/flaticon/png/005-family.png" alt="Image" class="img-fluid"></label>
+
                 </label>
               </div>
             </div>

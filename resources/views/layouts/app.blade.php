@@ -24,13 +24,13 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-            @include('layouts.page_templates.auth')
+            @include('layouts.page_templates.guest')
         @endauth
         @guest()
             @include('layouts.page_templates.guest')
         @endguest
 
-        <div class="fixed-plugin">
+      <!--  <div class="fixed-plugin">
           <div class="dropdown show-dropdown">
             <a href="#" data-toggle="dropdown">
               <i class="fa fa-cog fa-2x"> </i>
@@ -80,7 +80,7 @@
                         Get the pro version
                       </a>
                   </li> -->
-              <li class="button-container">
+             <!-- <li class="button-container">
                 <a href="https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html" target="_blank" class="btn btn-default btn-block">
                   View Documentation
                 </a>
@@ -102,7 +102,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div>-->
         <!--   Core JS Files   -->
         <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
         <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
